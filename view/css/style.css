@@ -1,0 +1,176 @@
+@import url(http://fonts.googleapis.com/css?family=Antic+Slab);
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+[v-cloak] {
+  display: none;
+}
+#welcome {
+  font-family: 'Indie Flower', cursive;
+  color: #1a1b1a;
+  background: white;
+  border-radius: 20px 2px;}
+h1 {
+  font-family: 'Antic Slab', serif;
+  font-size:80px;
+  color:#fff;
+}
+aside{
+margin:5px;
+}
+.lead {
+	color:#fff;
+}
+.form{
+  background:#fff;
+  border-radius:10%;
+
+}
+.form-title{
+  font-family: 'Antic Slab', serif;
+  text-align:center;
+  font-size:40px;
+  color: #007bff;
+}
+
+.bg {
+  background-image:url("../img/bg.jpg");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+.inline {
+  display:inline-block;
+  margin:10px;
+}
+footer {
+  color:#28a745;
+}
+ footer a:hover {
+  color:#28a745;
+  text-decoration:none;
+}
+
+
+.margin-top {
+  margin-top:30px;
+}
+
+@-webkit-keyframes icon-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes icon-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.icon-wobble-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.icon-wobble-horizontal .icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.icon-wobble-horizontal:hover .icon, .icon-wobble-horizontal:focus .icon, .icon-wobble-horizontal:active .icon {
+  -webkit-animation-name: icon-wobble-horizontal;
+  animation-name: icon-wobble-horizontal;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+/* Icon Pulse */
+@-webkit-keyframes icon-pulse {
+  25% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+@keyframes icon-pulse {
+  25% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+.icon-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.icon-pulse .icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.icon-pulse:hover .icon, .icon-pulse:focus .icon, .icon-pulse:active .icon {
+  -webkit-animation-name: icon-pulse;
+  animation-name: icon-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}

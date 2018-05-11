@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BANK</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body class ="bg">
+  <div id="app" v-cloak>
+    <div class="row" style="margin-top:60px;">
+
+      <div class="col-lg-12 text-center margin-top">
+
+        <h1><i style="font-size:0.3em;" class="fas fa-exclamation-circle"></i>Banking Exam </h1>
+        <p class="lead">Invia denaro in tutto il mondo &nbsp &nbsp<i class="fas fa-globe"></i>
+
+        </p>
+
+        <aside class="col-md-4 offset-md-4" v-if='!currentAccount'>
+          <button class="btn btn-primary icon-pulse" @click='signUp = !signUp'>Signup <i class="fas fa-user-plus icon"></i></button>
+          <button class="btn btn-success icon-wobble-horizontal" @click='logIn = !logIn'>Login <i class="fas fa-sign-in-alt icon"></i></button>
+        </aside>
+        <aside class="offset-md-12" v-if='currentAccount'>
+          <div class="offset-md-9">
+            <h2 id="welcome">Benvenuto {{currentAccount.name}}</h2>
+            <button class="btn btn-primary icon-pulse" @click='transaction = !transaction '>Bonifico <i class="fa-money-check-alt"></i></button>
+            <button class="btn btn-info icon-pulse" @click='showProfile = !showProfile '>Account <i class="fas fa-user"></i></button>
+            <button style="margin-top:8px;"class="btn btn-danger icon-wobble-horizontal" @click='logout()'>Logout<i class="fas fa-sign-in-alt icon"></i></button>
+          </aside>
+          <div class="row">
+
+            <div v-if='showProfile' class="card border-success mb-3 col-md-3 offset-md-9" style="max-width: 18rem;">
+              <div class="card-header text-success">Informazioni personali</div>
+              <p>Nome: {{currentAccount.name}}</p>
+              <p>Cognome: {{currentAccount.surname}}</p>
+              <p>Email: {{currentAccount.email}}</p>
+              <p>Conto: {{currentAccount.amount}}€</p>
+            </div>
+
+            <div v-if='logIn' class="col-md-4 offset-md-4">
+              <login v-bind:accesso='userLogin' v-bind:fn='login'></login>
+              <div class="alert alert-success margin-top" role="alert" v-if = 'systemMessage == "logged" '>
+                <span>Login effettuato con successo</span>
+              </div>
+              <div class="row" v-if='is404 || is401'>
+                <div class=" col-md-12 alert alert-danger" >Autenticazione fallita - Dati non riconosciuti <button class="btn btn-info icon-pulse" style="float:right; padding-bottom:5px;" @click='signUp = !signUp'>Registrati <i class="fas fa-user-plus icon"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 offset-md-4">
+              <signup v-if='signUp' v-bind:user='newAccount' v-bind:fn='signup'></signup>
+              <div class="alert alert-success margin-top" role="alert" v-if = 'systemMessage == "signedUp" '>
+                <span>Registrazione effettuata con successo</span>
+              </div>
+              <addhouse v-if='transaction' v-bind:house='newTransaction' v-bind:fn='addTransaction'></addhouse>
+              <div class="alert alert-success margin-top" role="alert" v-if = 'systemMessage == "transactionAdded" '>
+                <span>Bonifico effettuato con successo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <script src="bower_components/vue/dist/vue.min.js"></script>
+      <script src="bower_components/vue-resource/dist/vue-resource.min.js"></script>
+      <script src="bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="js/signup.js"></script>
+      <script src="js/login.js"></script>
+      <script src="js/addTransaction.js"></script>
+      <script src="js/app.js"></script>
+    </footer>
+  </body>
+  </html>
